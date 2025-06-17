@@ -43,8 +43,7 @@
       {
         "rule_set": "geosite-geolocation-!cn",
         "query_type": ["AAAA"],
-        "action": "predefined",
-        "rcode": "NXDOMAIN"
+        "action": "reject"
       },
       {
         "rule_set": "manual-dns-proxy",
