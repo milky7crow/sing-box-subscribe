@@ -263,7 +263,7 @@
       ],
       "filter":[
         {"action":"include","keywords":["HK|hk|香港|HongKong"]},
-		{"action":"exclude","keywords":["海外"]}
+        {"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -276,8 +276,8 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["HK|hk|香港|HongKong"]},
-		{"action":"exclude","keywords":["海外"]}
+        {"action":"include","keywords":["TW|tw|台湾|Taiwan"]},
+        {"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -290,10 +290,10 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["HK|hk|香港|HongKong"]},
-		{"action":"exclude","keywords":["海外"]}
+        {"action":"include","keywords":["SG|sg|新加坡|Singapore"]},
+        {"action":"exclude","keywords":["海外"]}
       ],
-	  "url": "http://www.gstatic.com/generate_204",
+      "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 50
     },
@@ -304,8 +304,8 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["HK|hk|香港|HongKong"]},
-		{"action":"exclude","keywords":["海外"]}
+        {"action":"include","keywords":["JP|jp|日本|Japan"]},
+        {"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -318,8 +318,8 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["HK|hk|香港|HongKong"]},
-		{"action":"exclude","keywords":["海外"]}
+        {"action":"include","keywords":["US|us|美国"]},
+        {"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -332,7 +332,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"exclude","keywords":["HK|hk|香港|TW|tw|台湾|SG|sg|新加坡|JP|jp|日本|US|us|美国|海外"]}
+        {"action":"exclude","keywords":["HK|hk|香港|HongKong|TW|tw|台湾|Taiwan|SG|sg|新加坡|Singapore|JP|jp|日本|Japan|US|us|美国|海外"]}
       ]
     },
     {
@@ -349,8 +349,22 @@
       "tolerance": 50
     },
     {
+      "tag":"auto-out",
+      "type":"urltest",
+      "outbounds":[
+        "{all}"
+      ],
+      "filter":[
+        {"action":"exclude","keywords":["海外"]}
+      ],
+      "url": "http://www.gstatic.com/generate_204",
+      "interval": "10m",
+      "tolerance": 50
+    },
+    {
       "tag": "direct-out",
-      "type": "direct"
+      "type": "direct",
+      "routing_mark": 255
     }
   ],
   "route": {

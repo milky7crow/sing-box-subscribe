@@ -281,7 +281,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["HK|hk|香港|HongKong"]},
+        {"action":"include","keywords":["TW|tw|台湾|Taiwan"]},
 		{"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
@@ -295,7 +295,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["HK|hk|香港|HongKong"]},
+        {"action":"include","keywords":["SG|sg|新加坡|Singapore"]},
 		{"action":"exclude","keywords":["海外"]}
       ],
 	  "url": "http://www.gstatic.com/generate_204",
@@ -309,7 +309,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["HK|hk|香港|HongKong"]},
+        {"action":"include","keywords":["JP|jp|日本|Japan"]},
 		{"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
@@ -323,7 +323,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"include","keywords":["HK|hk|香港|HongKong"]},
+        {"action":"include","keywords":["US|us|美国"]},
 		{"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
@@ -337,7 +337,7 @@
         "{all}"
       ],
       "filter":[
-        {"action":"exclude","keywords":["HK|hk|香港|TW|tw|台湾|SG|sg|新加坡|JP|jp|日本|US|us|美国|海外"]}
+        {"action":"exclude","keywords":["HK|hk|香港|HongKong|TW|tw|台湾|Taiwan|SG|sg|新加坡|Singapore|JP|jp|日本|Japan|US|us|美国|海外"]}
       ]
     },
     {
