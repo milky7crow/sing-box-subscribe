@@ -574,6 +574,10 @@ def parse_json(value):
     except json.JSONDecodeError:
         raise argparse.ArgumentTypeError(f"Invalid JSON: {value}")
 
+def add_routing_mark(value, mark):
+    for group in value.values():
+        for node in group:
+            node['routing_mark'] = mark
 
 if __name__ == '__main__':
     init_parsers()
@@ -581,9 +585,11 @@ if __name__ == '__main__':
     parser.add_argument('--temp_json_data', type=parse_json, help='临时内容')
     parser.add_argument('--template_index', type=int, help='模板序号')
     parser.add_argument('--gh_proxy_index', type=str, help='github加速链接')
+    parser.add_argument('--routing_mark', type=int, help='routing mark for tproxy')
     args = parser.parse_args()
     temp_json_data = args.temp_json_data
     gh_proxy_index = args.gh_proxy_index
+    routing_mark = args.routing_mark
     if temp_json_data and temp_json_data != '{}':
         providers = json.loads(temp_json_data)
     else:
@@ -629,5 +635,7 @@ if __name__ == '__main__':
         final_config = combined_contents  # 只返回节点信息
     else:
         final_config = combin_to_config(config, nodes)  # 节点信息添加到模板
+    if routing_mark:
+        add_routing_mark(nodes, routing_mark)
     save_config(providers["save_config_path"], final_config)
     # updateLocalConfig('http://127.0.0.1:9090',providers['save_config_path'])
