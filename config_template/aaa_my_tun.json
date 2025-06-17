@@ -425,9 +425,9 @@
         "outbound": "direct-out"
       },
       {
-        "rule_set": "geosite-openai",
-        "domain": [
-          "gemini.google.com"
+        "rule_set": [
+          "geosite-openai",
+          "geosite-gemini"
         ],
         "outbound": "(Open)AI"
       },
@@ -506,6 +506,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google.srs",
+        "download_detour": "direct-out"
+      },
+      {
+        "tag": "geosite-gemini",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/google-gemini.srs",
         "download_detour": "direct-out"
       },
       {
