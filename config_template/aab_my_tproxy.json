@@ -636,7 +636,8 @@
         "rules": [
           {
             "domain_suffix": [
-              "milkycrow.com"
+              "milkycrow.com",
+              "rutracker.net"
             ]
           }
         ]
@@ -668,7 +669,8 @@
               "iosapps-ssl.itunes.apple.com",
               "iosapps.itunes.apple.com",
 			  "sharepoint.com",
-			  "milkycrow.com"
+			  "milkycrow.com",
+              "rutracker.net"
             ]
           }
         ]
