@@ -23,7 +23,7 @@ def parse(data):
                 'uuid': _path[0].split(":")[-1],
                 'security': _path[0].split(":")[0] if ':' in _path[0] else 'auto',
                 'alter_id': int(netquery.get('alterId','0')),
-                'packet_encoding': 'xudp'
+                'packet_encoding': str(netquery.get('packetEncoding','')),
             }
             if (netquery.get('tls') and netquery['tls'] != '') or (netquery.get('security') == 'tls'):
                 node['tls']={
@@ -95,7 +95,9 @@ def parse(data):
                 'fingerprint': item['fp']
             }
     if item.get("net"):
-        if item['net'] in ['h2', 'http', 'tcp']:
+        if item['net'] == 'tcp':
+            node['network'] = 'tcp'
+        elif item['net'] in ['h2', 'http']:
             node['transport'] = {
                 'type':'http'
             }
