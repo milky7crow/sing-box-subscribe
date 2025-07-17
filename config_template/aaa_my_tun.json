@@ -633,7 +633,6 @@
         "rules": [
           {
             "domain_suffix": [
-              "milkycrow.com",
               "rutracker.net"
             ]
           }
@@ -645,6 +644,7 @@
         "rules": [
           {
             "domain_suffix": [
+              "milkycrow.com",
               "google.com"
             ]
           }
