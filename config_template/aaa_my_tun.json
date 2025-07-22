@@ -394,13 +394,7 @@
         "outbound": "direct-out"
       },
       {
-        "port": [
-          80,
-          443,
-          465,
-          587,
-          993
-        ],
+        "port_range": ":1023",
         "invert": true,
         "outbound": "direct-out"
       },
