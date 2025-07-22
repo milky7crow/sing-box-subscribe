@@ -396,7 +396,10 @@
       {
         "port": [
           80,
-          443
+          443,
+          465,
+          587,
+          993
         ],
         "invert": true,
         "outbound": "direct-out"
