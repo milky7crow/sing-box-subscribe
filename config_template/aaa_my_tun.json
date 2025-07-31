@@ -652,12 +652,6 @@
         "type": "inline",
         "rules": [
           {
-            "domain": [
-              "clash.razord.top",
-              "yacd.metacubex.one",
-              "yacd.haishan.me",
-              "d.metacubex.one"
-            ],
             "domain_suffix": [
               "eveonline.com",
               "iosapps-ssl.itunes.apple.com",
@@ -675,10 +669,6 @@
         "type": "inline",
         "rules": [
           {
-            "domain": [
-              "eu-de-1.milkycrow.com",
-              "fkccp.milkycrow.com"
-            ],
             "domain_suffix": [
               "music.apple.com",
               "itunes.apple.com",
