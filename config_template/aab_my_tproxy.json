@@ -83,7 +83,7 @@
       "tag": "tproxy-in",
       "type": "tproxy",
       "listen": "::",
-      "listen_port": 7891
+      "listen_port": 8964
     }
   ],
   "outbounds": [
@@ -264,7 +264,7 @@
       ],
       "filter":[
         {"action":"include","keywords":["HK|hk|香港|HongKong"]},
-        {"action":"exclude","keywords":["海外"]}
+		{"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -278,7 +278,7 @@
       ],
       "filter":[
         {"action":"include","keywords":["TW|tw|台湾|Taiwan"]},
-        {"action":"exclude","keywords":["海外"]}
+		{"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -292,9 +292,9 @@
       ],
       "filter":[
         {"action":"include","keywords":["SG|sg|新加坡|Singapore"]},
-        {"action":"exclude","keywords":["海外"]}
+		{"action":"exclude","keywords":["海外"]}
       ],
-      "url": "http://www.gstatic.com/generate_204",
+	  "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
       "tolerance": 50
     },
@@ -306,7 +306,7 @@
       ],
       "filter":[
         {"action":"include","keywords":["JP|jp|日本|Japan"]},
-        {"action":"exclude","keywords":["海外"]}
+		{"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -320,7 +320,7 @@
       ],
       "filter":[
         {"action":"include","keywords":["US|us|美国"]},
-        {"action":"exclude","keywords":["海外"]}
+		{"action":"exclude","keywords":["海外"]}
       ],
       "url": "http://www.gstatic.com/generate_204",
       "interval": "10m",
@@ -335,19 +335,6 @@
       "filter":[
         {"action":"exclude","keywords":["HK|hk|香港|HongKong|TW|tw|台湾|Taiwan|SG|sg|新加坡|Singapore|JP|jp|日本|Japan|US|us|美国|海外"]}
       ]
-    },
-    {
-      "tag":"auto-out",
-      "type":"urltest",
-      "outbounds":[
-        "{all}"
-      ],
-      "filter":[
-        {"action":"exclude","keywords":["海外"]}
-      ],
-      "url": "http://www.gstatic.com/generate_204",
-      "interval": "10m",
-      "tolerance": 50
     },
     {
       "tag":"auto-out",
@@ -397,10 +384,7 @@
         "outbound": "direct-out"
       },
       {
-        "port": [
-          80,
-          443
-        ],
+        "port_range": ":1023",
         "invert": true,
         "outbound": "direct-out"
       },
@@ -636,7 +620,6 @@
         "rules": [
           {
             "domain_suffix": [
-              "milkycrow.com",
               "rutracker.net"
             ]
           }
@@ -648,6 +631,7 @@
         "rules": [
           {
             "domain_suffix": [
+              "milkycrow.com",
               "google.com"
             ]
           }
@@ -658,19 +642,14 @@
         "type": "inline",
         "rules": [
           {
-            "domain": [
-              "clash.razord.top",
-              "yacd.metacubex.one",
-              "yacd.haishan.me",
-              "d.metacubex.one"
-            ],
             "domain_suffix": [
               "eveonline.com",
               "iosapps-ssl.itunes.apple.com",
               "iosapps.itunes.apple.com",
 			  "sharepoint.com",
 			  "milkycrow.com",
-              "rutracker.net"
+              "rutracker.net",
+              "bewildcard.com"
             ]
           }
         ]
