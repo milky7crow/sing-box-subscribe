@@ -397,7 +397,7 @@
         "outbound": "proxy-out"
       },
       {
-        "rule_set": "manual-traffic-proxy",
+        "rule_set": ["manual-traffic-proxy", "geosite-github"],
         "outbound": "proxy-out"
       },
       {
@@ -485,6 +485,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/onedrive.srs",
+        "download_detour": "direct-out"
+      },
+      {
+        "tag": "geosite-github",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/github.srs",
         "download_detour": "direct-out"
       },
       {
