@@ -1,12 +1,11 @@
 {
   "log": {
     "level": "warn",
-    "timestamp": true,
-    "output": "/var/log/sing-box.log"
+    "timestamp": true
   },
   "experimental": {
     "clash_api": {
-      "external_controller": "0.0.0.0:9090",
+      "external_controller": "127.0.0.1:9090",
       "external_ui": "ui",
       "secret": "",
       "external_ui_download_url": "https://gh-proxy.com/https://github.com/MetaCubeX/metacubexd/archive/refs/heads/gh-pages.zip",
@@ -83,10 +82,21 @@
   },
   "inbounds": [
     {
-      "tag": "tproxy-in",
-      "type": "tproxy",
+      "tag": "tun-in",
+      "type": "tun",
+      "address": [
+        "172.19.0.0/30",
+        "fdfe:dcba:9876::0/126"
+      ],
+      "stack": "system",
+      "auto_route": true,
+      "strict_route": true
+    },
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
       "listen": "::",
-      "listen_port": 7891
+      "listen_port": 7890
     }
   ],
   "outbounds": [
@@ -345,8 +355,7 @@
     },
     {
       "tag": "direct-out",
-      "type": "direct",
-      "routing_mark": 255
+      "type": "direct"
     }
   ],
   "route": {
@@ -356,6 +365,11 @@
     "auto_detect_interface": true,
     "final": "proxy-out",
     "rules": [
+      {
+        "network_type": "wifi",
+        "wifi_ssid": "Beautiful_Chicken",
+        "outbound": "direct"
+      },
       {
         "inbound": [
           "tun-in"
