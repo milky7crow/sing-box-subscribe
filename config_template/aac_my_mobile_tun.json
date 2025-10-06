@@ -461,6 +461,8 @@
           "geoip-cn",
           "geosite-cn",
           "geosite-geolocation-cn"
+          "geosite-cn",
+          "geosite-geolocation-cn"
         ],
         "outbound": "China"
       }
