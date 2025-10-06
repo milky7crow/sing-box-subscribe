@@ -388,7 +388,10 @@
         "outbound": "proxy-out"
       },
       {
-        "rule_set": ["manual-traffic-proxy", "geosite-github"],
+        "rule_set": [
+          "manual-traffic-proxy",
+          "geosite-github"
+        ],
         "outbound": "proxy-out"
       },
       {
