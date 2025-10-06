@@ -362,6 +362,14 @@
     "final": "proxy-out",
     "rules": [
       {
+        "type": "logical",
+        "mode": "not",
+        "rules": [
+          {"source_ip_cidr": "192.168.78.0/26"}
+        ],
+        "outbound": "direct-out"
+      },
+      {
         "inbound": [
           "tun-in"
         ],
