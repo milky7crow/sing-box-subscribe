@@ -41,15 +41,6 @@
         "server": "cf-dns"
       },
       {
-        "rule_set": "geosite-geolocation-!cn",
-        "query_type": [
-          "AAAA"
-        ],
-        "action": "predefined",
-        "rcode": "NOERROR",
-        "answer": []
-      },
-      {
         "rule_set": "manual-dns-proxy",
         "server": "cf-dns"
       },
@@ -58,23 +49,11 @@
         "server": "ali-dns"
       },
       {
-        "rule_set": "geosite-cn",
-        "server": "ali-dns"
-      },
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "rule_set": "geosite-geolocation-!cn",
-            "invert": true
-          },
-          {
-            "rule_set": "geoip-cn"
-          }
+        "rule_set": [
+          "geosite-cn",
+          "geosite-geolocation-cn"
         ],
-        "server": "cf-dns",
-        "client_subnet": "114.114.114.114/24"
+        "server": "ali-dns"
       }
     ],
     "final": "cf-dns",
@@ -442,7 +421,8 @@
       {
         "rule_set": [
           "geoip-cn",
-          "geosite-cn"
+          "geosite-cn",
+          "geosite-geolocation-cn"
         ],
         "outbound": "China"
       }
@@ -502,6 +482,13 @@
         "type": "remote",
         "format": "binary",
         "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/category-games.srs",
+        "download_detour": "direct-out"
+      },
+      {
+        "tag": "geosite-geolocation-cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://testingcf.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@sing/geo/geosite/geolocation-cn.srs",
         "download_detour": "direct-out"
       },
       {
