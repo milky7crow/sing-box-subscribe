@@ -49,20 +49,12 @@
         "server": "ali-dns"
       },
       {
-        "rule_set": [
-          "geosite-cn",
-          "geosite-geolocation-cn"
-        ],
-        "server": "ali-dns"
-      },
-      {
         "type": "logical",
         "mode": "and",
         "rules": [
           {
             "rule_set": [
-              "geosite-cn",
-              "geosite-geolocation-cn"
+              "geosite-cn"
             ],
             "invert": true
           },
@@ -72,6 +64,18 @@
         ],
         "action": "predefined",
         "rcode": "NXDOMAIN"
+      },
+      {
+        "rule_set": [
+          "geosite-google"
+        ],
+        "server": "cf-dns"
+      },
+      {
+        "rule_set": [
+          "geosite-cn"
+        ],
+        "server": "ali-dns"
       }
     ],
     "final": "cf-dns",
@@ -461,8 +465,7 @@
       {
         "rule_set": [
           "geoip-cn",
-          "geosite-cn",
-          "geosite-geolocation-cn"
+          "geosite-cn"
         ],
         "outbound": "China"
       }

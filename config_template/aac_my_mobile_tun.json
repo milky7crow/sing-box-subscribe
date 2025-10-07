@@ -29,21 +29,20 @@
         "tag": "ali-dns",
         "type": "https",
         "server": "223.5.5.5"
+      },
+      {
+        "tag": "local-dns",
+        "type": "local"
       }
     ],
     "rules": [
       {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "network_type": "wifi",
-            "wifi_ssid": "Beautiful_Chicken"
-          },
-          {
-            "clash_mode": "direct"
-          }
-        ],
+        "network_type": "wifi",
+        "wifi_ssid": "Beautiful_Chicken",
+        "server": "local-dns"
+      },
+      {
+        "clash_mode": "direct",
         "server": "ali-dns"
       },
       {
@@ -59,20 +58,12 @@
         "server": "ali-dns"
       },
       {
-        "rule_set": [
-          "geosite-cn",
-          "geosite-geolocation-cn"
-        ],
-        "server": "ali-dns"
-      },
-      {
         "type": "logical",
         "mode": "and",
         "rules": [
           {
             "rule_set": [
-              "geosite-cn",
-              "geosite-geolocation-cn"
+              "geosite-cn"
             ],
             "invert": true
           },
@@ -82,6 +73,18 @@
         ],
         "action": "predefined",
         "rcode": "NXDOMAIN"
+      },
+      {
+        "rule_set": [
+          "geosite-google"
+        ],
+        "server": "cf-dns"
+      },
+      {
+        "rule_set": [
+          "geosite-cn"
+        ],
+        "server": "ali-dns"
       }
     ],
     "final": "cf-dns",
@@ -476,8 +479,7 @@
       {
         "rule_set": [
           "geoip-cn",
-          "geosite-cn",
-          "geosite-geolocation-cn"
+          "geosite-cn"
         ],
         "outbound": "China"
       }
