@@ -55,6 +55,24 @@
           "geosite-geolocation-cn"
         ],
         "server": "ali-dns"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-cn",
+              "geosite-geolocation-cn"
+            ],
+            "invert": true
+          },
+          {
+            "ip_version": 6
+          }
+        ],
+        "action": "predefined",
+        "rcode": "NXDOMAIN"
       }
     ],
     "final": "cf-dns",
@@ -361,14 +379,6 @@
     "auto_detect_interface": true,
     "final": "proxy-out",
     "rules": [
-      {
-        "type": "logical",
-        "mode": "not",
-        "rules": [
-          {"source_ip_cidr": "192.168.78.0/26"}
-        ],
-        "outbound": "direct-out"
-      },
       {
         "inbound": [
           "tun-in"

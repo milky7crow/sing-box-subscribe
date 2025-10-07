@@ -54,6 +54,24 @@
           "geosite-geolocation-cn"
         ],
         "server": "ali-dns"
+      },
+      {
+        "type": "logical",
+        "mode": "and",
+        "rules": [
+          {
+            "rule_set": [
+              "geosite-cn",
+              "geosite-geolocation-cn"
+            ],
+            "invert": true
+          },
+          {
+            "ip_version": 6
+          }
+        ],
+        "action": "predefined",
+        "rcode": "NXDOMAIN"
       }
     ],
     "final": "cf-dns",
