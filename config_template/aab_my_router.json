@@ -62,6 +62,12 @@
         "answer": []
       },
       {
+        "rule_set": "manual-dns-block",
+        "action": "predefined",
+        "rcode": "NOERROR",
+        "answer": []
+      },
+      {
         "clash_mode": "direct",
         "server": "local-dns"
       },
@@ -661,6 +667,19 @@
           {
             "domain_suffix": [
               "milkycrow.com"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "manual-dns-block",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "mcdn.bilivideo.com",
+              "mcdn.bilivideo.cn",
+              "szbdyd.com"
             ]
           }
         ]
